@@ -1,0 +1,98 @@
+*{
+    font-family: sans-serif;
+}
+                    /*HEADER*/
+header{
+    background: url("../images/landscape.png") center center/cover no-repeat;
+    height: 500px;
+}
+header .black{
+    background-color: rgba(0,0,0,0.65);
+    height: 500px;
+    padding-top: 1px;
+}
+header .black .main_header{
+    color: white;
+    text-align: center;
+    font-size: 72px;
+    margin: 180px 0 0 0;
+}
+header .black .second_header{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 30px;
+}
+header .black .arrow{
+    display: block;
+    margin: 0 auto;
+    height: 90px;
+    margin-top: 50px;
+}
+
+                    /*MAIN*/
+main .main-content{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-left: 0;
+}
+main .main-content .column{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+main .main-content .column .item{
+    margin: 20px;
+    color: white;
+    padding-top: 15px;
+    height: 280px;
+    width: 350px;
+    background-color: rgb(0, 138, 202);
+    text-align: center;
+    border-radius: 11px;
+    font-weight: bold;
+    font-size: 20px;
+}
+main .main-content .column .item img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 11px;
+}
+
+                    /*FOOTER*/
+footer{
+    margin-top: 15px;
+    height: 100px;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+}
+footer div{
+    width: 33%;
+    margin-top: 30px;
+}
+footer .icons .icon{
+    height: 30px;
+    margin: 8px 0 0 10px;
+}
+footer .numbers{
+    display: flex;
+    justify-content: center;
+}
+footer .numbers .numbers__color{
+    color:white;
+    margin: 0 auto;
+    margin: 3px;
+    text-decoration: none;
+    margin: 10px;
+}
+footer .address .menu-contacts__item{
+    color: white;
+    display: block;
+    text-align: end;
+    text-decoration: none;
+    margin: 10px 14px 0 0;
+
+}
