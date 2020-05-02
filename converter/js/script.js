@@ -81,6 +81,7 @@ inp_36.addEventListener('input', ()=> {
     i36 = inp_36.value.toLowerCase();
     to10(i36,36);
 
+    
 })
 
 
