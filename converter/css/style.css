@@ -20,6 +20,7 @@ body {
     padding: 15px;
     margin-bottom: 10px;
     color: rgb(0, 173, 43);
+    font-size: 28px;
 }
 
 .wrap-for-system {
@@ -83,4 +84,23 @@ label, .resault {
 .discard:hover {
     background-color: rgb(2, 139, 36);
     font-size: 1.05em;
+}
+
+@media (max-width: 550px) {
+    .wrap {
+        width: 310px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        padding-bottom: 36px;
+    }
+    label, .resault {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+    .inpNum, .resaultInput {
+        margin-top: 4px;
+    }
 }
