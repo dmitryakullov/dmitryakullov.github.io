@@ -4,7 +4,7 @@ body {
     padding-top: 40px;
     background-color: rgb(112, 226, 255);
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 .wrap {
     width: 500px;
@@ -14,63 +14,49 @@ body {
     align-items: center;
     border-radius: 15px;
     padding-bottom: 36px;
+    border: 4px solid rgb(0, 173, 43);
 }
 .wrap h1 {
     text-align: center;
     padding: 15px;
     margin-bottom: 10px;
-    color: rgb(0, 173, 43);
     font-size: 28px;
+    color: rgb(0, 173, 43);
 }
 
-.wrap-for-system {
+.wrap label {
+    width: 100%;
     display: flex;
-    align-items: center;
-    background-color: rgb(0, 173, 43);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-input {
-    height: 30px;
-    border: none;
-    padding: 4px 10px;
-    font-size: 16px;
-    border-radius: 8px;
-}
-.wrap-for-system input {
-    width: 40px;
-}
-
-.wrap-for-system span {
-    margin: 0 6px;
-}
-.range {
-    font-size: 15px;
-    font-style: italic;
-    margin-bottom: 5px;
-    color: rgb(151, 151, 151);
-}
-
-.inpNum {
-    border: 1px solid black;
-    margin-right: 30px;
-    width: 250px;
-}
-.resaultInput{
-    border: 1px solid black;
-    margin-right: 30px;
-    width: 250px;
-}
-
-label, .resault {
-    display: flex;
-    width: 86%;
     justify-content: space-between;
-    margin-top: 20px;
+    padding: 10px 20px;
 }
-.discard {
+.wrap label div {
+    display: block;
+}
+.wrap label div sub {
+    margin-left: 4px;
+    color: rgb(0, 173, 43);
+    font-size: 15px;
+}
+.wrap label div span {
+    color: rgb(0, 173, 43);
+}
+
+.wrap label .last-sub {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+}
+
+.wrap label input {
+    height: 30px;
+    padding: 4px 8px;
+    border: 2px solid rgb(0, 173, 43);
+    border-radius: 8px;
+    width: 280px;
+}
+
+.wrap .discard {
     color: white;
     border: none;
     background-color: rgb(0, 173, 43);
@@ -81,26 +67,29 @@ label, .resault {
     cursor: pointer;
     transition-duration: 0.2s;
 }
-.discard:hover {
+.wrap .discard:hover {
     background-color: rgb(2, 139, 36);
     font-size: 1.05em;
 }
 
-@media screen and (max-width: 550px) {
-    .wrap {
-        width: 310px !important;
-        background-color: #fff;
+@media screen and (max-width: 575px) {
+    body .wrap {
+        width: 320px;
+        padding-bottom: 30px;
+    }
+    .wrap label {
+        padding: 10px 20px;
         display: flex;
         flex-direction: column;
+        justify-content: start;
         align-items: center;
-        border-radius: 15px;
-        padding-bottom: 36px;
+        
     }
-    label, .resault {
-        margin-top: 15px;
-        flex-direction: column;
+    .wrap label div {
+        margin-bottom: 5px;
     }
-    .inpNum, .resaultInput {
-        margin-top: 4px;
+    .wrap .discard:hover {
+        background-color: rgb(0, 173, 43);
+        font-size: 1em;
     }
 }

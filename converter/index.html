@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Системы счисления</title>
+    <title>Number System</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body> 
     <div class="wrap">
-        <h1>Перевод чисел<br>в разные системы</h1>
-        <div class="range">Диапазон ввода: 2 - 36</div>
-        <div class="wrap-for-system">
-            <span>C</span>
-            <input type="text" class="inp1">
-            <span>в</span>
-            <input type="text" class="inp2">
-            <span>систему</span>
-        </div>
-        <label for="#">
-            <span>Введите число:</span>
-            <input type="text" class="inpNum">
+        <h1>Number System</h1>
+        <label for="inp1">
+            <div>Hexadecimal<sub>16</sub></div>
+            <input id="inp1" type="text">
         </label>
-        <div class="resault">
-            <span>Результат:</span>
-            <input type="text" readonly class="resaultInput">
-        </div>
-        <button class="discard">Сброс</button>
+        <label for="inp2">
+            <div>Decimal<sub>10</sub></div>
+            <input id="inp2" type="text">
+        </label>
+        <label for="inp3">
+            <div>Octal<sub>8</sub></div>
+            <input id="inp3" type="text">
+        </label>
+        <label for="inp4">
+            <div>Binary<sub>2</sub></div>
+            <input id="inp4" type="text">
+        </label>
+        <label for="inp5">
+            <div><span>36</span> <sub class="last-sub">number system</sub></div>
+            <input placeholder="May be a mistake" id="inp5" type="text">
+        </label>
+
+        <button class="discard">Discard</button>
     </div>
 
     <script src="js/script.js"></script> 
