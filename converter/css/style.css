@@ -73,7 +73,7 @@ body {
 }
 
 @media screen and (max-width: 575px) {
-    body .wrap {
+    .wrap {
         width: 320px;
         padding-bottom: 30px;
     }
