@@ -88,7 +88,7 @@ label, .resault {
 
 @media screen and (max-width: 550px) {
     .wrap {
-        width: 310px;
+        width: 310px !important;
         background-color: #fff;
         display: flex;
         flex-direction: column;
