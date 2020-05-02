@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    background-color: rgb(112, 226, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+.wrap {
+    width: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding-bottom: 36px;
+}
+.wrap h1 {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: rgb(0, 173, 43);
+}
+
+.wrap-for-system {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 173, 43);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+input {
+    height: 30px;
+    border: none;
+    padding: 4px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+.wrap-for-system input {
+    width: 40px;
+}
+
+.wrap-for-system span {
+    margin: 0 6px;
+}
+.range {
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: rgb(151, 151, 151);
+}
+
+.inpNum {
+    border: 1px solid black;
+    margin-right: 30px;
+    width: 250px;
+}
+.resaultInput{
+    border: 1px solid black;
+    margin-right: 30px;
+    width: 250px;
+}
+
+label, .resault {
+    display: flex;
+    width: 86%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.discard {
+    color: white;
+    border: none;
+    background-color: rgb(0, 173, 43);
+    width: 200px;
+    height: 45px;
+    margin-top: 35px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.discard:hover {
+    background-color: rgb(2, 139, 36);
+    font-size: 1.05em;
+}
