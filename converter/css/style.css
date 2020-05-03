@@ -24,7 +24,7 @@ body {
     color: rgb(0, 173, 43);
 }
 
-.wrap label {
+.wrap>label {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -32,21 +32,14 @@ body {
 }
 .wrap label div {
     display: block;
+    position: relative;
 }
 .wrap label div sub {
     margin-left: 4px;
     color: rgb(0, 173, 43);
     font-size: 15px;
 }
-.wrap label div span {
-    color: rgb(0, 173, 43);
-}
 
-.wrap label .last-sub {
-    color: black;
-    font-size: 16px;
-    margin: 0;
-}
 
 .wrap label input {
     height: 30px;
@@ -55,6 +48,7 @@ body {
     border-radius: 8px;
     width: 280px;
 }
+
 
 .wrap .discard {
     color: white;
@@ -77,7 +71,7 @@ body {
         width: 320px;
         padding-bottom: 30px;
     }
-    .wrap label {
+    .wrap>label {
         padding: 10px 20px;
         display: flex;
         flex-direction: column;

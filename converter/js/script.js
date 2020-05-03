@@ -2,13 +2,13 @@ let inp_16 = document.querySelector('#inp1'),
     inp_10 = document.querySelector('#inp2'),
     inp_8 = document.querySelector('#inp3'),
     inp_2 = document.querySelector('#inp4'),
-    inp_36 = document.querySelector('#inp5'),
     discard = document.querySelector('.discard');
 
 let value10 =0;
-let i16,i8,i2,i36;
+let i16,i8,i2;
 
 function to10(value,system) {
+
     value10 = parseInt(value, system);
     inp_10.value = value10;
 
@@ -20,7 +20,6 @@ function to10(value,system) {
 
     inp_16.value = value10.toString(16);
     inp_8.value = value10.toString(8);
-    inp_36.value = value10.toString(36);
 }
 
 
@@ -28,7 +27,7 @@ function to10(value,system) {
 inp_16.addEventListener('input', ()=> {
 
     i16 = inp_16.value.toLowerCase();
-    if ((i16[0]==='-' && i16.length===1)) {
+    if (i16[0]==='-' && i16.length===1) {
     } 
     else if((+i16[i16.length-1] >=0 && +i16[i16.length-1] <=9) || i16[i16.length-1] ==='a' || i16[i16.length-1] ==='b' || i16[i16.length-1] ==='c' || i16[i16.length-1] ==='d' || i16[i16.length-1] ==='e' || i16[i16.length-1] ==='f') {
         to10(i16,16);
@@ -53,7 +52,7 @@ inp_10.addEventListener('input', ()=> {
 inp_8.addEventListener('input', ()=> {
     i8 = inp_8.value.toLowerCase();
     if ((i8[0]==='-' && i8.length===1)) {
-    } 
+    }
     else if(+i8[i8.length-1] <=7 && +i8[i8.length-1] >=0) {
         to10(i8,8);
     } 
@@ -77,13 +76,6 @@ inp_2.addEventListener('input', ()=> {
 
 })
 
-inp_36.addEventListener('input', ()=> {
-    i36 = inp_36.value.toLowerCase();
-    to10(i36,36);
-
-    
-})
-
 
 
 discard.onclick = ()=> {
@@ -91,7 +83,6 @@ discard.onclick = ()=> {
     inp_10.value = '';
     inp_8.value = '';
     inp_2.value = '';
-    inp_36.value = '';
     value10 =0;
 }
 
