@@ -5,6 +5,6 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-app.listen('/dimaggio224xz.github.io/my_test/server', function () {
+app.listen('/dimaggio224xz.github.io/my_test/server.js', function () {
     console.log('Example app listening on port 3000!');
 });
