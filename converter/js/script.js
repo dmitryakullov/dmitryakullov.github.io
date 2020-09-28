@@ -1,19 +1,17 @@
 let inp_16 = document.querySelector('#inp1'),
     inp_10 = document.querySelector('#inp2'),
-    inp_8 = document.querySelector('#inp3'),
-    inp_2 = document.querySelector('#inp4'),
+    inp_2 = document.querySelector('#inp3'),
     minusNum = document.querySelector('#minus'),
     minusShow = document.querySelectorAll('.input-minus'),
     discard = document.querySelector('.discard');
 
 
-let i16, i10, i8, i2, value10 = 0, minus = false; 
-i16 = i10 = i8 = i2 = '';
+let i16, i10, i2, value10 = 0, minus = false; 
+i16 = i10 = i2 = '';
 
 function setEmptyStr() {
     inp_16.value = '';
     inp_10.value = '';
-    inp_8.value = '';
     inp_2.value = '';
     value10 =0;
 }
@@ -24,6 +22,71 @@ function setClassMinus() {
         i.classList.toggle('visibility')
     })
 }
+
+let minus= false;
+function binaryConverter(num2) {
+    num2 = ''+num2;
+
+    if(!minus) {
+        const len = num2.length;
+        switch (len%4) {
+            case 0: 
+                num2 = '0000' + num2;
+                break;
+            case 1: 
+                num2 = '000' + num2;
+                break;
+            case 2: 
+                num2 = '00' + num2;
+                break;
+            case 3: 
+                num2 = '0' + num2;
+                break;
+        }
+        const len2 = len.length;
+
+        if (len2 % 8 === 0) {
+            // do nothing
+        }
+        else if (len2 % 8 === 4) {
+            num2 = '0000' + num2;
+        }
+    }
+
+    arr = num2.split('');
+
+    let arr2 = arr.map(i=> i==='1' ? '0' : '1')
+
+    arr = [];
+
+    let finishAdd = false;
+    for (let i = arr2.length-1; i >= 0; i--) {
+        if (!finishAdd) {
+            if (arr2[i] === '1') {
+                arr.push('0');
+
+                if(i === 0) {
+                    arr.push('1')
+                }
+            }
+
+            else {
+                arr.push('1');
+                finishAdd = true;
+            }
+        }
+        
+        else {
+            arr.push(arr2[i])
+        }
+    }
+
+    arr.reverse();
+
+    console.log(arr.join(''))
+}
+
+binaryConverter('011111111111')
 
 
 
@@ -37,8 +100,6 @@ function to10(value,system) {
     inp_2.value = value10.toString(2);
 
     inp_16.value = value10.toString(16).toUpperCase();
-
-    inp_8.value = value10.toString(8);
 }
 
 
@@ -89,28 +150,6 @@ inp_10.addEventListener('input', ()=> {
         inp_10.value = i10;
     }
 })
-
-
-
-inp_8.addEventListener('input', ()=> {
-    const value = inp_8.value;
-    if (value === ''){
-        setEmptyStr();
-        return;
-    };
-
-    const regExp = /[^0-7]/;
-
-    if (!regExp.test(value)) {
-        i8 = value;
-        to10(i8, 8);
-    }
-    else {
-        inp_8.value = i8;
-    }
-
-})
-
 
 
 inp_2.addEventListener('input', ()=> {
