@@ -15,6 +15,7 @@ main {
     min-height: 90vh;
     padding-bottom: 30px;
 }
+
 .wrap {
     width: 500px;
     background-color: #ebffe8;
@@ -36,12 +37,54 @@ main {
     color: #0b410f;
 }
 
-.wrap>label {
+.minus {
+    border-radius: 8px;
+    border: 1px solid rgb(122, 122, 122);
+    background-color: #daedff;
+    color: rgb(122, 122, 122);
+    padding: 5px 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition-duration: .15s;
+}
+
+.minus-active {
+    background-color: #1b7ad3;
+    border: 1px solid #1b7ad3;
+    color: rgb(255, 255, 255);
+}
+
+.input-minus {
+    position: absolute;
+    color: #000000;
+    font-weight: 700;
+    font-size: 25px;
+}
+.input-minus1 {
+    left: 27px;
+}
+.input-minus2 {
+    left: 46px;
+}
+.input-minus3 {
+    left: 63px;
+}
+.input-minus4 {
+    left: 59px;
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+.wrap label{
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px;
 }
+
 .wrap label div {
     display: block;
     position: relative;
@@ -56,7 +99,7 @@ main {
 
 .wrap label input {
     height: 30px;
-    padding: 4px 8px;
+    padding: 4px 0 4px 14px;
     border: 2px solid #96b271;
     background-color: #f7fff6;
     border-radius: 8px;
@@ -94,7 +137,7 @@ footer{
         width: 320px;
         padding-bottom: 30px;
     }
-    .wrap>label {
+    .wrap label {
         padding: 10px 20px;
         display: flex;
         flex-direction: column;
@@ -105,7 +148,19 @@ footer{
     .wrap label div {
         margin-bottom: 5px;
     }
+
+    .wrap label input {
+        margin-top: -25px;
+    }
+
     .wrap .discard:hover {
         font-size: 1em;
+    }
+
+    .input-minus {
+        left: -131px;
+        top: 8px;
+        margin: 0;
+
     }
 }
