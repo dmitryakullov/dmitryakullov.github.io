@@ -23,11 +23,13 @@ function setClassMinus() {
     })
 }
 
-let minus= false;
+
 function binaryConverter(num2) {
     num2 = ''+num2;
 
-    if(!minus) {
+    if (num2 === '0' || num2 === '') return num2;
+
+    if(minus) {
         const len = num2.length;
         switch (len%4) {
             case 0: 
@@ -56,8 +58,8 @@ function binaryConverter(num2) {
     arr = num2.split('');
 
     let arr2 = arr.map(i=> i==='1' ? '0' : '1')
-
     arr = [];
+
 
     let finishAdd = false;
     for (let i = arr2.length-1; i >= 0; i--) {
@@ -69,24 +71,26 @@ function binaryConverter(num2) {
                     arr.push('1')
                 }
             }
-
             else {
                 arr.push('1');
                 finishAdd = true;
             }
         }
-        
         else {
             arr.push(arr2[i])
         }
     }
+    let resault = (arr.reverse()).join('');
 
-    arr.reverse();
+    if (!minus) {                   // cut zeros in start of string
+        const regExp = /1[10]*$/g;
 
-    console.log(arr.join(''))
+        resault = resault.match(regExp) || '0';
+    }
+
+    return resault;
 }
 
-binaryConverter('011111111111')
 
 
 
@@ -106,11 +110,19 @@ function to10(value,system) {
 minusNum.addEventListener('click', ()=> {
     if (minus) {
         minus = false;
-        setClassMinus()
-    } else {
-        minus = true;
-        setClassMinus()
+        setClassMinus();
     }
+    else {
+        minus = true;
+        setClassMinus();
+    }
+
+    i2 = binaryConverter(inp_2.value);
+    const i10Additional = parseInt(i2, 2);
+    i16 = (i10Additional || '') && i10Additional.toString(16).toUpperCase();
+
+    inp_2.value = i2;
+    inp_16.value = i16;
 });
 
 
@@ -175,3 +187,92 @@ inp_2.addEventListener('input', ()=> {
 discard.onclick = ()=> {
     setEmptyStr();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function binaryConverter(num2) {
+//     num2 = ''+num2;
+
+//     if(!minus) {
+//         const len = num2.length;
+//         switch (len%4) {
+//             case 0: 
+//                 num2 = '0000' + num2;
+//                 break;
+//             case 1: 
+//                 num2 = '000' + num2;
+//                 break;
+//             case 2: 
+//                 num2 = '00' + num2;
+//                 break;
+//             case 3: 
+//                 num2 = '0' + num2;
+//                 break;
+//         }
+//         const len2 = len.length;
+
+//         if (len2 % 8 === 0) {
+//             // do nothing
+//         }
+//         else if (len2 % 8 === 4) {
+//             num2 = '0000' + num2;
+//         }
+//     }
+
+//     arr = num2.split('');
+
+//     let arr2 = arr.map(i=> i==='1' ? '0' : '1')
+//     arr = [];
+
+
+//     let finishAdd = false;
+//     for (let i = arr2.length-1; i >= 0; i--) {
+//         if (!finishAdd) {
+//             if (arr2[i] === '1') {
+//                 arr.push('0');
+
+//                 if(i === 0) {
+//                     arr.push('1')
+//                 }
+//             }
+//             else {
+//                 arr.push('1');
+//                 finishAdd = true;
+//             }
+//         }
+//         else {
+//             arr.push(arr2[i])
+//         }
+//     }
+//     arr.reverse();
+
+//     console.log(arr.join(''))
+// }
