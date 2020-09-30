@@ -1,30 +1,32 @@
 body {
+    color: #4f4f5c;
+}
+
+.wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-    background-color: #8daab8;
+    background-color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: #09360c;
     min-height: 100%;
 }
 
 main {
-    min-height: 90vh;
+    min-height: calc(100vh - 90px);
     padding-bottom: 30px;
 }
 
 .wrap {
     width: 500px;
-    background-color: #ebffe8;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 15px;
     padding-bottom: 36px;
-    border: 10px solid #2bad10;
+    border: 10px solid #dd1213;
 }
 .push {
     height: 50px;
@@ -34,24 +36,26 @@ main {
     padding: 15px;
     margin-bottom: 10px;
     font-size: 28px;
-    color: #0b410f;
 }
 
 .minus {
-    border-radius: 8px;
-    border: 1px solid rgb(122, 122, 122);
-    background-color: #daedff;
-    color: rgb(122, 122, 122);
-    padding: 5px 10px;
-    margin-bottom: 12px;
+    border: 1px solid #dd1213;
+    background-color: #ffffff;
+    color: #dd1213;
+    height: 34px;
+    width: 160px;
+    margin-bottom: 24px;
     cursor: pointer;
     transition-duration: .15s;
 }
 
+.minus:hover {
+    font-size: 1.04em;;
+}
+
 .minus-active {
-    background-color: #1b7ad3;
-    border: 1px solid #1b7ad3;
-    color: rgb(255, 255, 255);
+    background-color: #dd1213;
+    color: rgb(255, 255, 255)
 }
 
 .input-minus {
@@ -106,13 +110,12 @@ main {
 
 
 .wrap .discard {
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
-    background-color: #2bad10;
+    background-color: #4f4f5c;
     width: 200px;
     height: 45px;
     margin-top: 35px;
-    border-radius: 12px;
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -125,9 +128,13 @@ footer{
     align-items: center;
     width: 100%;
     height: 50px;
-    color: #8daab8;
-    background-color: #103a0f;
+    color: #ffffff;
+    background-color: #4f4f5c;
 }
+
+
+
+
 
 @media screen and (max-width: 575px) {
     .wrap {
@@ -141,9 +148,6 @@ footer{
         justify-content: start;
         align-items: center;
         
-    }
-    .wrap label div {
-        margin-bottom: 5px;
     }
 
     .wrap label input {
