@@ -13,6 +13,7 @@ function setEmptyStr() {
     inp_16.value = '';
     inp_10.value = '';
     inp_2.value = '';
+    i16 = i10 = i2 = '';
     value10 =0;
 }
 
