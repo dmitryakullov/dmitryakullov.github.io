@@ -60,4 +60,5 @@ clear.addEventListener('click', () => {
   textarea.value = '';
   randomWord.textContent = '';
   wordsListUl.innerHTML = '';
+  wordList = [];
 });
