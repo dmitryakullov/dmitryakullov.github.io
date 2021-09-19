@@ -10,3 +10,13 @@ main {
   margin: 2rem;
   min-height: 100vh;
 }
+
+.random-word-style {
+  height: 4.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#textarea {
+  resize: none;
+}

@@ -14,31 +14,36 @@
         <div class="d-flex flex-column justify-content-center">
           <div class="row mb-4">
             <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-2 mb-2 mb-lg-0">
-              <input class="form-control" type="text" placeholder="Insert words" />
+              <textarea
+                id="textarea"
+                rows="1"
+                class="form-control"
+                placeholder="Insert words"
+              ></textarea>
             </div>
 
-            <div class="col-4 col-md-3 offset-md-2 col-lg-2 offset-lg-1">
-              <button type="button" class="btn btn-primary">Mix</button>
+            <div class="col-4 col-md-2 offset-md-2 col-lg-1 offset-lg-0">
+              <button id="mix-and-show-word" type="button" class="btn btn-primary">Mix</button>
             </div>
 
             <div class="col-4 col-md-3 col-lg-2">
-              <button type="button" class="btn btn-outline-dark">Clear</button>
+              <button id="clear" type="button" class="btn btn-outline-dark">Clear</button>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12 col-md-8 offset-md-2 col-lg-4 mb-2 mb-lg-0">
               <div class="card">
-                <div class="card-body">Word...</div>
+                <div id="random-word" class="card-body random-word-style"></div>
               </div>
             </div>
 
-            <div class="col-4 col-md-3 offset-md-2 col-lg-2 offset-lg-1">
-              <button type="button" class="btn btn-success">Next</button>
+            <div class="col-4 col-md-2 offset-md-2 col-lg-1 offset-lg-0">
+              <button id="next-word" type="button" class="btn btn-success">Next</button>
             </div>
-            <div class="col-4 col-md-3 col-lg-2">
+            <!-- <div class="col-4 col-md-3 col-lg-2">
               <button type="button" class="btn btn-outline-success">Previous</button>
-            </div>
+            </div> -->
           </div>
 
           <div class="row mt-4">
@@ -47,6 +52,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
                     <button
+                      id="accordion-button"
                       class="accordion-button"
                       type="button"
                       data-bs-toggle="collapse"
@@ -59,13 +65,7 @@
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by
-                      default, until the collapse plugin adds the appropriate classes that we use to
-                      style each element. These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify any of this with
-                      custom CSS or overriding our default variables. It's also worth noting that
-                      just about any HTML can go within the though the transition does limit
-                      overflow.
+                      <ul id="words-list" class="list-group list-group-flush"></ul>
                     </div>
                   </div>
                 </div>
