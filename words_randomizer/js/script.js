@@ -6,35 +6,54 @@ const nextWordBtn = document.querySelector('#next-word');
 const wordsListUl = document.querySelector('#words-list');
 const accordionButton = document.querySelector('#accordion-button');
 
-let wordList;
+let wordList = [];
 let randomWordNumber;
 
 function chooseWord(amountWords) {
-  console.log({ amountWords });
   return Math.floor(Math.random() * amountWords);
 }
 
-nextWordBtn.addEventListener('click', () => {});
-
-mixAndShowWordBtn.addEventListener('click', () => {
-  if (wordsListUl.innerHTML && !textarea.value) {
-    return;
-  }
-
-  const words = textarea.value.split('\n');
-  wordList = words.map((text, index) => ({ text, wordNumber: index + 1 }));
-  textarea.value = '';
-
+function createListAndChooseWord() {
   let stringList = '';
   wordList.map(({ text, wordNumber }) => {
     stringList += `<li class="list-group-item"><b>${wordNumber}.</b> ${text}</li>`;
   });
+  wordsListUl.innerHTML = stringList;
 
   randomWordNumber = chooseWord(wordList.length);
-
   randomWord.textContent = wordList[randomWordNumber].text;
+}
 
-  wordsListUl.innerHTML = stringList;
+nextWordBtn.addEventListener('click', () => {
+  wordList.splice(randomWordNumber, 1);
+
+  if (!wordList.length) {
+    randomWord.textContent = '';
+    wordsListUl.innerHTML = '';
+    wordList = [];
+    return;
+  }
+
+  createListAndChooseWord();
+});
+
+mixAndShowWordBtn.addEventListener('click', () => {
+  if (!textarea.value) {
+    return;
+  }
+
+  const words = textarea.value.split('\n');
+  const filteredWords = words.map((text) => text.trim()).filter((text) => text !== '');
+
+  if (!filteredWords.length) {
+    textarea.value = '';
+    return;
+  }
+
+  wordList = filteredWords.map((text, index) => ({ text, wordNumber: index + 1 }));
+  textarea.value = '';
+
+  createListAndChooseWord();
 });
 
 clear.addEventListener('click', () => {
