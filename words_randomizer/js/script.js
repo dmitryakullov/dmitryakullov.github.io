@@ -25,6 +25,7 @@ function createListAndChooseWord() {
 }
 
 nextWordBtn.addEventListener('click', () => {
+  alert(wordList);
   wordList.splice(randomWordNumber, 1);
 
   if (!wordList.length) {
