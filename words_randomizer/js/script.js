@@ -16,7 +16,7 @@ function chooseWord(amountWords) {
 function createListAndChooseWord() {
   let stringList = '';
   wordList.map(({ text, wordNumber }) => {
-    stringList += `<li class="list-group-item"><b>${wordNumber}.</b> ${text}</li>`;
+    stringList += `<li class="list-group-item text-break"><b>${wordNumber}).</b> ${text}</li>`;
   });
   wordsListUl.innerHTML = stringList;
 
